@@ -12,10 +12,10 @@ namespace AnimalStory
             switch (key)
             {
                 case "D":
-                    CreateAnimalStory.DayTime();
+                    Console.WriteLine(CreateAnimalStory.DayTime());
                     break;
                 case "N":
-                    CreateAnimalStory.NightTime();
+                    Console.WriteLine(CreateAnimalStory.NightTime());
                     break;
                 default:
                     break;
@@ -70,7 +70,8 @@ namespace AnimalStory
                 }
             }
             
-            story += $"{NocturnalAnimals[1].Kind} springer genom skogen och jagar sitt byte, lika så {NocturnalAnimals[2].Kind} och {NocturnalAnimals[3].Kind}.";
+            story += $"{NocturnalAnimals[0].Kind} springer genom skogen och jagar sitt byte, " +
+                $"lika så {NocturnalAnimals[1].Kind} och {NocturnalAnimals[2].Kind}.";
             return story;
         }
         public static string DayTime()
@@ -84,7 +85,7 @@ namespace AnimalStory
                     DayTimeAnimals.Add(animal);
                 }
             }
-            story += $"{DayTimeAnimals[1].Kind} springer genom skogen och letar mat, lika så {DayTimeAnimals[2].Kind}.";
+            story += $"{DayTimeAnimals[0].Kind} springer genom skogen och letar mat, lika så {DayTimeAnimals[1].Kind}.";
             return story;
         }
     }

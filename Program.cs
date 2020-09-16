@@ -59,16 +59,22 @@ namespace AnimalStory
         }
         public static string NightTime()
         {
-            foreach (Animal animal in )
-            {
-                
-            }
+            List<Animal> NocturnalAnimals = new List<Animal>();
             string story = "";
+            foreach (Animal animal in BuildAnimal())
+            {
+                if (animal.Nocturnal)
+                {
+                    NocturnalAnimals.Add(animal);
+                }
+            }
             return story;
         }
         public static string DayTime()
         {
+
             string story = "";
+
             return story;
         }
     }

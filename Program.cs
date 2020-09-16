@@ -20,6 +20,7 @@ namespace AnimalStory
                 default:
                     break;
             }
+            Console.ReadLine();
         }
     }
 
@@ -68,13 +69,22 @@ namespace AnimalStory
                     NocturnalAnimals.Add(animal);
                 }
             }
+            
+            story += $"{NocturnalAnimals[1].Kind} springer genom skogen och jagar sitt byte, lika så {NocturnalAnimals[2].Kind} och {NocturnalAnimals[3].Kind}.";
             return story;
         }
         public static string DayTime()
         {
-
+            List<Animal> DayTimeAnimals = new List<Animal>();
             string story = "";
-
+            foreach (Animal animal in BuildAnimal())
+            {
+                if (!animal.Nocturnal)
+                {
+                    DayTimeAnimals.Add(animal);
+                }
+            }
+            story += $"{DayTimeAnimals[1].Kind} springer genom skogen och letar mat, lika så {DayTimeAnimals[2].Kind}.";
             return story;
         }
     }

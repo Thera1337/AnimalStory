@@ -58,10 +58,9 @@ namespace AnimalStory
             };
             return forest;
         }
-        public static string NightTime()
+        public static List<Animal> NightTime()
         {
             List<Animal> NocturnalAnimals = new List<Animal>();
-            string story = "";
             foreach (Animal animal in BuildAnimal())
             {
                 if (animal.Nocturnal)
@@ -70,14 +69,11 @@ namespace AnimalStory
                 }
             }
             
-            story += $"{NocturnalAnimals[0].Kind} springer genom skogen och jagar sitt byte, " +
-                $"lika så {NocturnalAnimals[1].Kind} och {NocturnalAnimals[2].Kind}.";
-            return story;
+            return NocturnalAnimals;
         }
-        public static string DayTime()
+        public static List<Animal> DayTime()
         {
             List<Animal> DayTimeAnimals = new List<Animal>();
-            string story = "";
             foreach (Animal animal in BuildAnimal())
             {
                 if (!animal.Nocturnal)
@@ -85,8 +81,7 @@ namespace AnimalStory
                     DayTimeAnimals.Add(animal);
                 }
             }
-            story += $"{DayTimeAnimals[0].Kind} springer genom skogen och letar mat, lika så {DayTimeAnimals[1].Kind}.";
-            return story;
+            return DayTimeAnimals;
         }
     }
 
@@ -98,5 +93,15 @@ namespace AnimalStory
 
     public class Story
     {
+        public static string BuildStory()
+        {
+
+        string story = "";
+        story += $"{NocturnalAnimals[0].Kind} springer genom skogen och jagar sitt byte, " +
+            $"lika så {NocturnalAnimals[1].Kind} och {NocturnalAnimals[2].Kind}.";
+
+        string story = "";
+        story += $"{DayTimeAnimals[0].Kind} springer genom skogen och letar mat, lika så {DayTimeAnimals[1].Kind}.";
+        }
     }
 }

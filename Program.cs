@@ -12,10 +12,10 @@ namespace AnimalStory
             switch (key)
             {
                 case "D":
-                    Story.DayTime();
+                    CreateAnimal.DayTime();
                     break;
                 case "N":
-                    Story.NightTime();
+                    CreateAnimal.NightTime();
                     break;
                 default:
                     break;
@@ -47,26 +47,19 @@ namespace AnimalStory
             animal5.Kind = "Örn";
             animal5.Nocturnal = true;
 
-            List<Animal> forest = new List<Animal>();
-            forest.Add(animal1);
-            forest.Add(animal2);
-            forest.Add(animal3);
-            forest.Add(animal4);
-            forest.Add(animal5);
+            List<Animal> forest = new List<Animal>
+            {
+                animal1,
+                animal2,
+                animal3,
+                animal4,
+                animal5
+            };
+
         }
-    }
-
-    class Animal
-    {
-        public string Kind { get; set; }
-        public bool Nocturnal { get; set; }
-    }
-
-    public class Story
-    {
         public static string NightTime()
         {
-            foreach (var animal in forest)
+            foreach (var animal in )
             {
 
             }
@@ -78,5 +71,15 @@ namespace AnimalStory
             string story = "";
             return story;
         }
+    }
+
+    class Animal
+    {
+        public string Kind { get; set; }
+        public bool Nocturnal { get; set; }
+    }
+
+    public class Story
+    {
     }
 }

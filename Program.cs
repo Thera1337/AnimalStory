@@ -58,30 +58,38 @@ namespace AnimalStory
             };
             return forest;
         }
-        public static List<Animal> NightTime()
+        public static string NightTime()
         {
-            List<Animal> NocturnalAnimals = new List<Animal>();
+            string story = "";
             foreach (Animal animal in BuildAnimal())
             {
                 if (animal.Nocturnal)
                 {
-                    NocturnalAnimals.Add(animal);
+                    story += $"{animal.Kind} smyger runt i natten och letar efter något att äta. \n";
+                }
+                else
+                {
+                    story += $"{animal.Kind} sover lugnt i natten. \n";
                 }
             }
             
-            return NocturnalAnimals;
+            return story;
         }
-        public static List<Animal> DayTime()
+        public static string DayTime()
         {
-            List<Animal> DayTimeAnimals = new List<Animal>();
+            string story = "";
             foreach (Animal animal in BuildAnimal())
             {
                 if (!animal.Nocturnal)
                 {
-                    DayTimeAnimals.Add(animal);
+                    story += $"{animal.Kind} strosar runt i lugnan ro och letar efter mat. \n";
+                }
+                else
+                {
+                    story += $"{animal.Kind} sover gott så som nattaktiva djur gör på dagen. \n";
                 }
             }
-            return DayTimeAnimals;
+            return story;
         }
     }
 
@@ -89,19 +97,5 @@ namespace AnimalStory
     {
         public string Kind { get; set; }
         public bool Nocturnal { get; set; }
-    }
-
-    public class Story
-    {
-        public static string BuildStory()
-        {
-
-        string story = "";
-        story += $"{NocturnalAnimals[0].Kind} springer genom skogen och jagar sitt byte, " +
-            $"lika så {NocturnalAnimals[1].Kind} och {NocturnalAnimals[2].Kind}.";
-
-        string story = "";
-        story += $"{DayTimeAnimals[0].Kind} springer genom skogen och letar mat, lika så {DayTimeAnimals[1].Kind}.";
-        }
     }
 }
